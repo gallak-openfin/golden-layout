@@ -864,7 +864,12 @@ export class Stack extends ComponentParentableItem {
 
     /** @internal */
     private handleResize() {
-        this._header.updateTabSizes()
+        if (getComputedStyle(this.layoutManager.container).display === 'block') {
+            console.log(`[GL] style is visible`);
+            this._header.updateTabSizes();
+        } else {
+            console.log(`[GL] style is hidden - skipping resize`);
+        }
     }
 
     /** @internal */
