@@ -22,7 +22,7 @@ describe('drag source', function() {
 		};
 
 		layout = TestTools.createLayout(rootLayout);
-		expect(layout.isInitialised).toBeTrue();
+		expect(layout.isInitialised).toBe(true);
 	});
 
 	afterEach(function () {
@@ -81,8 +81,8 @@ describe('drag source', function() {
 		expect(dragProxy).toBeNull();
 
 		const componentItem = TestTools.verifyPath('row.1.stack.0', layout);
-		expect(componentItem.element.querySelectorAll(`.${createdFromDragSourceClass}`).length)
-			.toBe(1, 'number of .dragged elements inside dropped element');
+		// old msg: 'number of .dragged elements inside dropped element'
+		expect(componentItem.element.querySelectorAll(`.${createdFromDragSourceClass}`).length).toBe(1);
 	}
 
 	function startDrag(): void {

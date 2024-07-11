@@ -10,7 +10,7 @@ export default class TestTools {
 
 		myLayout.loadLayout(config);
 
-		expect(myLayout.isInitialised).toBeTrue();
+		expect(myLayout.isInitialised).toBe(true);
 
 		return myLayout;
 	}
@@ -54,7 +54,7 @@ export default class TestTools {
 				expect(node.type).toBe(pathSegment);
 			}
 			else {
-				expect(node.isStack || node.isRow || node.isColumn).toBeTrue();
+				expect(node.isStack || node.isRow || node.isColumn).toBe(true);
 				node = (node as unknown as Stack | RowOrColumn).contentItems[pathSegmentAsInt]
 				expect(node).toBeDefined();
 			}

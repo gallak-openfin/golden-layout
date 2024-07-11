@@ -3,7 +3,7 @@ import { ComponentContainer, GoldenLayout, LayoutConfig } from '../..';
 describe('component creation', function () {
 
 	let layout: GoldenLayout;
-	const eventListener = globalThis.jasmine.createSpyObj<{itemCreated(): void}>(['itemCreated']);
+	const eventListener = globalThis.jasmine.createSpyObj('eventListener', ['itemCreated']);
 
 	beforeAll(function () {
 		layout = new GoldenLayout();
